@@ -23,12 +23,6 @@ module.exports = plop => {
         },
         {
           type: "add",
-          path: "src/components/{{moduleName}}/{{pascalCase name}}/{{pascalCase name}}.module.scss",
-          templateFile:
-            "plop-templates/Component/Component.module.scss.hbs",
-        },
-        {
-          type: "add",
           path: "src/components/{{moduleName}}/{{pascalCase name}}/index.js",
           templateFile:
             "plop-templates/Component/index.js.hbs",
@@ -49,12 +43,6 @@ module.exports = plop => {
           type: "add",
           path: "src/pages/{{pascalCase name}}/{{pascalCase name}}.jsx",
           templateFile: "plop-templates/Page/Page.jsx.hbs",
-        },
-        {
-          type: "add",
-          path: "src/pages/{{pascalCase name}}/{{pascalCase name}}.module.scss",
-          templateFile:
-            "plop-templates/Page/Page.module.scss.hbs",
         },
         {
           type: "add",
