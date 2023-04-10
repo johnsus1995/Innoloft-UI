@@ -6,7 +6,7 @@ function App() {
     <Router>
       <div className="w-screen h-screen">
         <Routes>
-          <Route element={MainLayout}>
+          <Route element={<MainLayout/>}>
 
           </Route>
         </Routes>

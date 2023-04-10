@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const Navbar = props => {
   const { className } = props;
   return (
-    <div className={ ${className}`}>
+    <div className={ `${className}`}>
       Navbar
     </div>
   );
