@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import Analytics from "src/components/Analytics";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
         </p>
         <button className="bg-[#00df9a] w-[200px] rounded-md font-medium my-6 py-3 mx-auto">Get started</button>
       </div>
+      <Analytics/>
     </div>
   );
 };
