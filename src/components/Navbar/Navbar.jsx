@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { ReactComponent as Logo } from "src/assets/icons/logo.svg";
 import { AiOutlineMessage } from "react-icons/ai";
 import { SlBell } from "react-icons/sl";
-import { BsChevronDown } from "react-icons/bs";
+import { BsChevronDown } from "react-icons/bs"
 
 const Navbar = (props) => {
   return (
