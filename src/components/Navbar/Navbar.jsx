@@ -2,12 +2,12 @@ import PropTypes from "prop-types";
 import { ReactComponent as Logo } from "src/assets/icons/logo.svg";
 import { AiOutlineMessage } from "react-icons/ai";
 import { SlBell } from "react-icons/sl";
-import { BsChevronDown } from "react-icons/bs"
+import { BsChevronDown } from "react-icons/bs";
 
 const Navbar = (props) => {
   return (
     <div className="Navbar">
-      <div className="  flex justify-between items-center bg-secondary_white h-[55px]  mx-auto px-4">
+      <div className="  flex justify-between items-center bg-secondary_white h-[55px] lg:px-[240px] mx-auto  px-4">
         <div className="min-w-[140px] min-h-[26.29px] ml-0 ">
           <Logo />
         </div>
