@@ -7,7 +7,7 @@ import { BsChevronDown } from "react-icons/bs";
 const Navbar = (props) => {
   return (
     <div className="Navbar">
-      <div className="  flex justify-between items-center bg-secondary_white h-[55px] lg:px-[240px] mx-auto  px-4">
+      <div className="  flex justify-between items-center bg-secondary_violet h-[55px] lg:px-[240px] mx-auto  px-4">
         <div className="min-w-[140px] min-h-[26.29px] ml-0 ">
           <Logo />
         </div>
@@ -19,19 +19,19 @@ const Navbar = (props) => {
           />
         </div>
         <div>
-          <ul className=" hidden lg:flex gap-5 justify-between items-center md:flex">
+          <ul className=" hidden lg:flex gap-5 justify-between items-center md:flex ">
             <li>
               <AiOutlineMessage />
             </li>
-            <li className="flex gap-1 items-center">
+            <li className="flex gap-1 items-center ">
               <p>EN</p>
               <BsChevronDown />
             </li>
             <li>
               <SlBell />
             </li>
-            <li className="flex gap-1 items-center">
-              <div className="w-[40px]">
+            <li className="flex gap-1 items-center ">
+              <div className="w-[40px] ">
                 <img
                   src="src/assets/images/profilePic.png"
                   alt="/"

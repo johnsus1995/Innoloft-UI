@@ -14,7 +14,7 @@ export default {
         warning: '#FFC107',
         info: '#17A2B8',
 
-        secondary_white:"#e8eaf6"
+        secondary_violet:"#e8eaf6"
       },
     },
   },

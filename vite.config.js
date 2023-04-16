@@ -8,7 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       src: "/src",
-      assets:"/assets"
+      assets:"/assets",
     },
     build: {
       assetsDir: "assets",
