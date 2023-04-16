@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 const Home = () => {
   return (
     <div className="Home">
-      Home
     </div>
   );
 };
