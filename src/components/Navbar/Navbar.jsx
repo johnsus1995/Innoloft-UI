@@ -7,7 +7,7 @@ import { BsChevronDown } from "react-icons/bs";
 const Navbar = (props) => {
   return (
     <div className="Navbar">
-      <div className="  flex justify-between items-center bg-secondary_violet h-[55px] lg:px-[240px] mx-auto  px-4">
+      <div className="px-4 lg:px-[200px] flex justify-between items-center bg-secondary_violet h-[55px] mx-auto">
         <div className="min-w-[140px] min-h-[26.29px] ml-0 ">
           <Logo />
         </div>

@@ -13,11 +13,9 @@ export default {
         danger: '#DC3545',
         warning: '#FFC107',
         info: '#17A2B8',
-
         secondary_violet:"#e8eaf6"
       },
     },
   },
   plugins: [],
 }
-
