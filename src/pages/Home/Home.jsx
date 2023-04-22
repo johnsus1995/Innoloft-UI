@@ -6,8 +6,11 @@ import { ReactComponent as Logo } from "src/assets/icons/logo.svg";
 import Map from "src/components/utils/Map";
 import IFrame from "src/components/IFrame";
 import OfferDetails from "src/components/OfferDetails";
+import { useNavigate } from "react-router-dom";
+
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <div className="Home">
       <div className="px-4 lg:px-[200px]">
@@ -15,9 +18,9 @@ const Home = () => {
           <div className="col-span-1 hidden sm:flex">
             <Sidebar />
           </div>
-          <div className="col-span-2">
-            <div className="block sm:flex justify-between items-center">
-              <nav className=" py-4">
+          <div className="col-span-2 pt-3">
+            <div className="block sm:flex justify-between items-center pb-3">
+              <nav className="">
                 <ol className="list-reset flex text-gray-500">
                   <li>
                     <a
@@ -51,7 +54,7 @@ const Home = () => {
                   </li>
                 </ol>
               </nav>
-              <button className="bg-primary w-[50px] h-[35px] text-white rounded-md">
+              <button className="bg-primary px-3 py-1.5 text-white rounded-md" onClick={()=>navigate("/edit")}>
                 Edit
               </button>
             </div>
@@ -104,13 +107,15 @@ const Home = () => {
                 </div>
               </div>
             </div>
-              <div className="mt-3 p-4 bg-[#FFFFFF] border border-r-gray-200">
-                <p>Video</p>
-                <div className="px-[50px] py-3">
-
-                <IFrame width="715" height="300"/>
-                </div>
+            <div className="mt-3 p-4 bg-[#FFFFFF] border border-r-gray-200">
+              <p>Video</p>
+              <div className="px-[50px] py-3">
+                <IFrame
+                  width="715"
+                  height="270"
+                />
               </div>
+            </div>
 
             <div className="mt-3 p-3 bg-[#FFFFFF] border border-r-gray-200 mb-4">
               <p className="py-2">Offer details</p>
