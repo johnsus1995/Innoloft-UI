@@ -60,7 +60,7 @@ const Home = () => {
                 <img
                   src="src/assets/images/heroImage.png"
                   alt="/"
-                ></img>
+                />
                 <div className="p-3">
                   <p className="font-bold">
                     Intelligent Finite Elements in Structural mechanics
@@ -119,6 +119,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      
     </div>
   );
 };
