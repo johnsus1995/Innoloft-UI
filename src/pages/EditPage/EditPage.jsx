@@ -7,6 +7,7 @@ import Map from "src/components/utils/Map";
 import IFrame from "src/components/IFrame";
 import OfferDetails from "src/components/OfferDetails";
 import { useNavigate } from "react-router-dom";
+import WysiwygEditor from "src/components/utils/WysiwygEditor";
 
 const EditPage = () => {
   const navigate = useNavigate();
@@ -14,11 +15,11 @@ const EditPage = () => {
   return (
     <div className="EditPage">
       <div className="px-4 lg:px-[200px]">
-        <div className="flex flex-col sm:grid sm:grid-cols-3 gap-3">
+        <div className="flex flex-col sm:grid sm:grid-cols-4 gap-3">
           <div className="col-span-1 hidden sm:flex">
             <Sidebar />
           </div>
-          <div className="col-span-2 pt-3">
+          <div className="col-span-3 pt-3">
             <div className="block sm:flex justify-between items-center pb-3 ">
               <p>Offer Title</p>
               <button
@@ -35,8 +36,10 @@ const EditPage = () => {
                   alt="/"
                 ></img>
                 <div className="p-3">
-                  <input type="text" className="border border-gray-200 w-[100%] py-1.5 rounded-md" />
-                  
+                  <input type="text" className="border border-gray-200 w-[100%] py-1.5 px-2 rounded-md outline-none" />
+
+                  <WysiwygEditor />
+
                 </div>
               </div>
               <div className=" px-3 pt-5">
