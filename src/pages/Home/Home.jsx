@@ -13,12 +13,12 @@ const Home = () => {
   const navigate = useNavigate();
   return (
     <div className="Home">
-      <div className="px-4 lg:px-[200px]">
-        <div className="flex flex-col sm:grid sm:grid-cols-4 gap-3">
+      <div className="px-4 xl:px-[200px]">
+        <div className="flex flex-col sm:grid sm:grid-cols-5 gap-3">
           <div className="col-span-1 hidden sm:flex">
             <Sidebar />
           </div>
-          <div className="col-span-3 pt-3">
+          <div className="col-span-4 pt-3">
             <div className="block sm:flex justify-between items-center pb-3">
               <nav className="">
                 <ol className="list-reset flex text-gray-500">
@@ -85,7 +85,7 @@ const Home = () => {
               <div className=" px-3 pt-5">
                 <div className="flex flex-col gap-4">
                   <p>Offered By</p>
-                  <Logo className="w-[100%]" />
+                  <Logo className="max-w-[75%]" />
                   <div className="flex gap-5 items-center">
                     <div className="w-[50px]">
                       <img
