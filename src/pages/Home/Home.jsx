@@ -14,11 +14,11 @@ const Home = () => {
   return (
     <div className="Home">
       <div className="px-4 xl:px-[200px]">
-        <div className="flex flex-col sm:grid sm:grid-cols-5 gap-3">
+        <div className="flex flex-col sm:grid sm:grid-cols-4 gap-3">
           <div className="col-span-1 hidden sm:flex">
             <Sidebar />
           </div>
-          <div className="col-span-4 pt-3">
+          <div className="col-span-3 pt-3">
             <div className="block sm:flex justify-between items-center pb-3">
               <nav className="">
                 <ol className="list-reset flex text-gray-500">

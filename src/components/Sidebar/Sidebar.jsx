@@ -8,7 +8,7 @@ import {
 
 const Sidebar = (props) => {
   return (
-    <div className="Sidebar px-4 py-4 h-[100%]">
+    <div className="Sidebar py-4 h-[100%]">
       <div className="flex gap-5 items-center">
         <div className="w-[60px]">
           <img
