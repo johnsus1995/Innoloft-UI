@@ -3,7 +3,7 @@ import { apiErrorHandler, apiSuccessHandler } from "src/helpers/responseHandler"
 import Qs from "qs";
 
 const customAxios = axios.create({
-  baseURL: import.meta.env.REACT_APP_BASE_URL,
+  baseURL: import.meta.env.VITE_BASE_URL,
   paramsSerializer: {
     serialize: (params) => Qs.stringify(params, { arrayFormat: "brackets" }),
   },

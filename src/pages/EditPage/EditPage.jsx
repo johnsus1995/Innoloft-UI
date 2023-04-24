@@ -8,9 +8,24 @@ import IFrame from "src/components/IFrame";
 import OfferDetails from "src/components/OfferDetails";
 import { useNavigate } from "react-router-dom";
 import WysiwygEditor from "src/components/utils/WysiwygEditor";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import * as productActions from "src/store/product/actions"
 
 const EditPage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch()
+
+
+  const fetchProduct = async() => {
+    const res = await dispatch(productActions.get())
+  }
+  
+  
+  useEffect(() => {
+    fetchProduct()
+  },[])
+
 
   return (
     <div className="EditPage">
