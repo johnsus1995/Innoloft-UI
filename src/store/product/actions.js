@@ -1,15 +1,13 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import * as productApi from "src/api/product";
 
-export const get = createAsyncThunk("auth/get", async (config) => {
+export const get = createAsyncThunk("product/get", async (config) => {
   // const { formValues, navigate, toast } = data;
-
     const res = await productApi.get(config);
     return res.data;
-
 });
 
-export const update = createAsyncThunk("auth/update", async (data) => {
+export const update = createAsyncThunk("product/update", async (data) => {
   const { formValues, navigate, toast } = data;
   const res = await productApi.update({
     first_name: formValues.first_name,
@@ -24,4 +22,17 @@ export const update = createAsyncThunk("auth/update", async (data) => {
   } else {
     console.log(res);
   }
+});
+
+
+export const getTRL = createAsyncThunk("product/getTRL", async (config) => {
+  // const { formValues, navigate, toast } = data;
+    const res = await productApi.getTRL(config);
+    return res.data;
+});
+
+export const getAppConfig = createAsyncThunk("product/getAppConfig", async (config) => {
+  // const { formValues, navigate, toast } = data;
+    const res = await productApi.getAppConfig(config);
+    return res.data;
 });

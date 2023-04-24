@@ -1,11 +1,10 @@
-// import { isDev } from "helpers";
-// import history from "router/history";
+
 
 export function apiErrorHandler(err) {
     if (err.response) {
       switch (err.response.status) {
         case 500:
-          // isDev() && console.log(err);
+          console,log(err.respons)
           break;
         case 503:
           window.location.href = "/maintenance";

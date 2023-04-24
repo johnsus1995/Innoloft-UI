@@ -30,7 +30,7 @@ export const get = (config={}) => {
 
   export const getAppConfig = (data, options) => {
     return customAxios({
-      url: "/trl/",
+      url: `/configuration/:${import.meta.env.APP_ID}/`,
       method: "GET",
       data,
       ...options,
