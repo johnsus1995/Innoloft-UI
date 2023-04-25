@@ -1,10 +1,8 @@
 import PropTypes from "prop-types";
 import Sidebar from "src/components/Sidebar";
-import { AiOutlineRight, AiOutlineHome } from "react-icons/ai";
 import { CiLocationOn } from "react-icons/ci";
 import { ReactComponent as Logo } from "src/assets/icons/logo.svg";
 import Map from "src/components/utils/Map";
-import IFrame from "src/components/IFrame";
 import OfferDetails from "src/components/OfferDetails";
 import { useNavigate } from "react-router-dom";
 import WysiwygEditor from "src/components/utils/WysiwygEditor";
@@ -31,20 +29,28 @@ const EditPage = () => {
   const dispatch = useDispatch();
   const _product = useSelector(productDetails);
 
-  console.log(_product);
-  
-  const [description,setDescription] = useState("");
-  const [heading,setHeading] = useState("Intelligent Finite Elements in Structural mechanics")
+  const [formData, setFormData] = useState({
+    heading:"Intelligent Finite Elements in Structural mechanics",
+    description:"",
+    category:"",
+    businessModel:"",
+    trl:""
+  });
 
+  const [description,setDescription] = useState("")
 
-  const onSaveClick = (data) => {
-    
-  }
+  const onInputChange = (e) => {
+    const {name,value} = e.target
+    setFormData({...formData,[name]:value})
+  };
+
+  const onSaveClick = async () => {
+    console.log(formData);
+  };
 
   const onViewOfferClick = () => {
     // navigate("/")
   };
-  
 
   return (
     <div className="EditPage">
@@ -72,13 +78,14 @@ const EditPage = () => {
                 <div className="p-3">
                   <input
                     type="text"
-                    value={heading}
-                    onChange={setHeading}
+                    value={formData.heading}
+                    name="heading"
+                    onChange={onInputChange}
                     className="border border-gray-200 w-[100%] py-1.5 px-2 rounded-md outline-none"
                   />
 
                   <div className="pt-3">
-                    <WysiwygEditor setDescription={setDescription}/>
+                    <WysiwygEditor setDescription={setDescription} />
 
                     <div className="border border-gray-200 p-3 my-3 md:grid grid-cols-2 gap-3">
                       <div className="">
@@ -86,12 +93,20 @@ const EditPage = () => {
                           <p>Category</p>
                           <input
                             type="text"
+                            name="category"
+                            value={formData.category}
+                            onChange={onInputChange}
                             className="outline-none border border-gray-200 w-[100%] px-2 py-1"
                           />
                         </div>
                         <div>
                           <p>TRL</p>
-                          <select className="w-[100%] bg-white border border-gray-200 py-1 outline-none">
+                          <select
+                            name="trl"
+                            value={formData.trl}
+                            onChange={onInputChange}
+                            className="w-[100%] bg-white border border-gray-200 py-1 outline-none"
+                          >
                             <option>Select TRL</option>
                             <option>TRL 1</option>
                             <option>TRL 2</option>
@@ -104,7 +119,10 @@ const EditPage = () => {
                         <div>
                           <p>Business Model</p>
                           <input
+                            name="businessModel"
                             type="text"
+                            value={formData.businessModel}
+                            onChange={onInputChange}
                             className="outline-none border border-gray-200 w-[100%] px-2 py-1"
                           />
                         </div>
@@ -113,7 +131,10 @@ const EditPage = () => {
 
                     <div className="flex justify-end gap-3 py-3">
                       <button>Cancel</button>
-                      <button className="bg-primary text-white min-w-[60px] rounded-md py-1 flex justify-center" onClick={onSaveClick}>
+                      <button
+                        className="bg-primary text-white min-w-[60px] rounded-md py-1 flex justify-center"
+                        onClick={onSaveClick}
+                      >
                         Save
                       </button>
                     </div>
