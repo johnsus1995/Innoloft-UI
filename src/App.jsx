@@ -9,15 +9,20 @@ function App() {
       <div className="w-screen h-screen">
         <Routes>
           <Route element={<MainLayout />}>
-            <Route
+          <Route
               path="/"
+              element={<h1>Home</h1>}
+            />
+            <Route
+              path="/product"
               element={<Home />}
             />
             <Route
-              path="/edit"
+              path="/product/edit"
               element={<EditPage />}
             />
           </Route>
+          <Route path="*" element={<h>Not found!</h>} />
         </Routes>
       </div>
     </Router>

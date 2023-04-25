@@ -6,18 +6,36 @@ import { ReactComponent as Logo } from "src/assets/icons/logo.svg";
 import Map from "src/components/utils/Map";
 import IFrame from "src/components/IFrame";
 import OfferDetails from "src/components/OfferDetails";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { productDetails } from "src/store/product/selectors";
+import { useEffect } from "react";
+
 
 const Home = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const _product = useSelector(productDetails);
+
+  const fetchProduct = async () => {
+     await dispatch(productActions.get());
+  };
+
+  useEffect(() => {
+    fetchProduct();
+  }, []);
+
+
   return (
     <div className="Home">
-      <div className="px-4 lg:px-[200px]">
-        <div className="flex flex-col sm:grid sm:grid-cols-3 gap-3">
+      <div className="px-4 xl:px-[200px]">
+        <div className="flex flex-col sm:grid sm:grid-cols-4 gap-3">
           <div className="col-span-1 hidden sm:flex">
-            <Sidebar />
+            <Sidebar product={_product}/>
           </div>
-          <div className="col-span-2">
-            <div className="block sm:flex justify-between items-center">
-              <nav className=" py-4">
+          <div className="col-span-3 pt-3">
+            <div className="block sm:flex justify-between items-center pb-3">
+              <nav className="">
                 <ol className="list-reset flex text-gray-500">
                   <li>
                     <a
@@ -51,7 +69,7 @@ const Home = () => {
                   </li>
                 </ol>
               </nav>
-              <button className="bg-primary w-[50px] h-[35px] text-white rounded-md">
+              <button className="bg-primary px-3 py-1.5 text-white rounded-md" onClick={()=>navigate("/product/edit")}>
                 Edit
               </button>
             </div>
@@ -82,7 +100,7 @@ const Home = () => {
               <div className=" px-3 pt-5">
                 <div className="flex flex-col gap-4">
                   <p>Offered By</p>
-                  <Logo className="w-[100%]" />
+                  <Logo className="max-w-[75%]" />
                   <div className="flex gap-5 items-center">
                     <div className="w-[50px]">
                       <img
@@ -104,13 +122,15 @@ const Home = () => {
                 </div>
               </div>
             </div>
-              <div className="mt-3 p-4 bg-[#FFFFFF] border border-r-gray-200">
-                <p>Video</p>
-                <div className="px-[50px] py-3">
-
-                <IFrame width="715" height="300"/>
-                </div>
+            <div className="mt-3 p-4 bg-[#FFFFFF] border border-r-gray-200">
+              <p>Video</p>
+              <div className="px-[50px] py-3">
+                <IFrame
+                  width="715"
+                  height="270"
+                />
               </div>
+            </div>
 
             <div className="mt-3 p-3 bg-[#FFFFFF] border border-r-gray-200 mb-4">
               <p className="py-2">Offer details</p>
