@@ -15,4 +15,9 @@ export default defineConfig({
       assetsInclude: ["jpg", "png", "gif", "svg"],
     },
   },
+  theme: {
+    fontFamily: {
+      sans: ['Roboto', 'sans-serif'],
+    },
+  },
 });

@@ -6,7 +6,7 @@ import EditPage from "src/pages/EditPage";
 function App() {
   return (
     <Router>
-      <div className="w-screen h-screen">
+      <div className="w-screen h-screen font-sans">
         <Routes>
           <Route element={<MainLayout />}>
           <Route

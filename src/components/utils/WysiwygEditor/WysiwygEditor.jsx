@@ -20,7 +20,7 @@ const WysiwygEditor = (props) => {
   return (
     <div className="WysiwygEditor">
       <Editor
-        apiKey="8265hhceadx8i5n3l9s30jiy5amh9ozg4oko7kheeneodk0u"
+        apiKey={import.meta.env.VITE_TINYMCE_API_KEY}
         onInit={(evt, editor) => (editorRef.current = editor)}
         initialValue={initialValue}
         outputFormat='text'

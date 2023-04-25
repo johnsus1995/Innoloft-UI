@@ -41,7 +41,7 @@ const Navbar = (props) => {
               <div className="w-[40px]">
                 <img
                   className="rounded-full"
-                  src={_product.user.profilePicture}
+                  src={_product?.user?.profilePicture}
                   alt="/"
                 />
               </div>

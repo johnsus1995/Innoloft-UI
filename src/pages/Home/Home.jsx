@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { productDetails } from "src/store/product/selectors";
 import { useEffect } from "react";
+import * as productActions from "src/store/product/actions"
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
   const _product = useSelector(productDetails);
 
   const fetchProduct = async () => {
+    debugger
      await dispatch(productActions.get());
   };
 

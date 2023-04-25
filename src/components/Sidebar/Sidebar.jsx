@@ -23,7 +23,7 @@ const Sidebar = (props) => {
           />
         </div>
         <div className="flex flex-col">
-          <p className="font-bold text-lg">{`${_product.user.firstName} ${_product.user.lastName}`}</p>
+          <p className="font-bold text-lg">{`${_product?.user?.firstName} ${_product?.user?.lastName}`}</p>
           <p className="text-sm">Innoloft Gmbh</p>
         </div>
       </div>
