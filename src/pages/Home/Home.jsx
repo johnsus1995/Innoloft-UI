@@ -19,7 +19,6 @@ const Home = () => {
   const _product = useSelector(productDetails);
 
   const fetchProduct = async () => {
-    debugger
      await dispatch(productActions.get());
   };
 

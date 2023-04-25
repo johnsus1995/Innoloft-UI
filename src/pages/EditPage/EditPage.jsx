@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import * as productActions from "src/store/product/actions";
 import { productDetails } from "src/store/product/selectors";
 import { RotatingLines } from "react-loader-spinner";
+import { toast } from 'react-toastify';
 
 const Spinner = () => {
   return (
@@ -45,7 +46,15 @@ const EditPage = () => {
   };
 
   const onSaveClick = async () => {
-    console.log(formData);
+    const reqData = {
+      ...formData,description
+    }
+
+     const res = await dispatch(productActions.update(reqData))
+     if(res){
+      toast("Product updated Successfully")
+      navigate("/product")
+     }
   };
 
   const onViewOfferClick = () => {
