@@ -3,13 +3,20 @@ import { ReactComponent as Logo } from "src/assets/icons/logo.svg";
 import { AiOutlineMessage } from "react-icons/ai";
 import { SlBell } from "react-icons/sl";
 import { BsChevronDown } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { productDetails } from "src/store/product/selectors";
+
 
 const Navbar = (props) => {
+  const navigate = useNavigate();
+  const _product = useSelector(productDetails);
+
   return (
     <div className="Navbar">
       <div className="px-4 lg:px-[200px] flex justify-between items-center bg-secondary_violet h-[55px] mx-auto">
-        <div className="min-w-[140px] min-h-[26.29px] ml-0 ">
-          <Logo />
+        <div className="min-w-[140px] min-h-[26.29px] ml-0 cursor-pointer" onClick={()=>navigate('/product')}>
+          <Logo/>
         </div>
         <div className="border">
           <input
@@ -31,9 +38,10 @@ const Navbar = (props) => {
               <SlBell />
             </li>
             <li className="flex gap-1 items-center ">
-              <div className="w-[40px] ">
+              <div className="w-[40px]">
                 <img
-                  src="src/assets/images/profilePic.png"
+                  className="rounded-full"
+                  src={_product.user.profilePicture}
                   alt="/"
                 />
               </div>

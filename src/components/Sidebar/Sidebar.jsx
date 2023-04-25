@@ -5,19 +5,25 @@ import {
   AiOutlineBranches,
   AiOutlineDown,
 } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { productDetails } from "src/store/product/selectors";
+
 
 const Sidebar = (props) => {
+  const _product = useSelector(productDetails);
+
   return (
     <div className="Sidebar py-4 h-[100%]">
       <div className="flex gap-5 items-center">
         <div className="w-[60px]">
           <img
-            src="src/assets/images/profilePic.png"
+            className="rounded-full"
+            src={_product?.user?.profilePicture}
             alt="/"
           />
         </div>
         <div className="flex flex-col">
-          <p className="font-bold text-lg">Jaison John</p>
+          <p className="font-bold text-lg">{`${_product.user.firstName} ${_product.user.lastName}`}</p>
           <p className="text-sm">Innoloft Gmbh</p>
         </div>
       </div>

@@ -7,16 +7,31 @@ import Map from "src/components/utils/Map";
 import IFrame from "src/components/IFrame";
 import OfferDetails from "src/components/OfferDetails";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { productDetails } from "src/store/product/selectors";
+import { useEffect } from "react";
 
 
 const Home = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const _product = useSelector(productDetails);
+
+  const fetchProduct = async () => {
+     await dispatch(productActions.get());
+  };
+
+  useEffect(() => {
+    fetchProduct();
+  }, []);
+
+
   return (
     <div className="Home">
       <div className="px-4 xl:px-[200px]">
         <div className="flex flex-col sm:grid sm:grid-cols-4 gap-3">
           <div className="col-span-1 hidden sm:flex">
-            <Sidebar />
+            <Sidebar product={_product}/>
           </div>
           <div className="col-span-3 pt-3">
             <div className="block sm:flex justify-between items-center pb-3">
@@ -54,7 +69,7 @@ const Home = () => {
                   </li>
                 </ol>
               </nav>
-              <button className="bg-primary px-3 py-1.5 text-white rounded-md" onClick={()=>navigate("/edit")}>
+              <button className="bg-primary px-3 py-1.5 text-white rounded-md" onClick={()=>navigate("/product/edit")}>
                 Edit
               </button>
             </div>

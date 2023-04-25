@@ -9,9 +9,22 @@ import OfferDetails from "src/components/OfferDetails";
 import { useNavigate } from "react-router-dom";
 import WysiwygEditor from "src/components/utils/WysiwygEditor";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import * as productActions from "src/store/product/actions";
 import { productDetails } from "src/store/product/selectors";
+import { RotatingLines } from "react-loader-spinner";
+
+const Spinner = () => {
+  return (
+    <RotatingLines
+      strokeColor="#e8eaf6"
+      strokeWidth="4"
+      animationDuration="1"
+      width="25"
+      visible={true}
+    />
+  );
+};
 
 const EditPage = () => {
   const navigate = useNavigate();
@@ -19,18 +32,19 @@ const EditPage = () => {
   const _product = useSelector(productDetails);
 
   console.log(_product);
+  
+  const [description,setDescription] = useState("");
+  const [heading,setHeading] = useState("Intelligent Finite Elements in Structural mechanics")
 
-  const fetchProduct = async () => {
-    const res = await dispatch(productActions.get());
-  };
+
+  const onSaveClick = (data) => {
+    
+  }
 
   const onViewOfferClick = () => {
     // navigate("/")
   };
-
-  useEffect(() => {
-    fetchProduct();
-  }, []);
+  
 
   return (
     <div className="EditPage">
@@ -52,34 +66,37 @@ const EditPage = () => {
             <div className="flex flex-col md:grid grid-cols-3 bg-white border border-gray-200">
               <div className="col-span-2 border border-r-1 border-gray-200">
                 <img
-                  src="src/assets/images/heroImage.png"
+                  src={_product.picture}
                   alt="/"
                 ></img>
                 <div className="p-3">
                   <input
                     type="text"
+                    value={heading}
+                    onChange={setHeading}
                     className="border border-gray-200 w-[100%] py-1.5 px-2 rounded-md outline-none"
                   />
 
                   <div className="pt-3">
-                    <WysiwygEditor />
+                    <WysiwygEditor setDescription={setDescription}/>
 
                     <div className="border border-gray-200 p-3 my-3 md:grid grid-cols-2 gap-3">
                       <div className="">
-                        <div>
+                        <div className="pb-3">
                           <p>Category</p>
                           <input
                             type="text"
-                            className="outline-none border border-gray-200 w-[100%] px-2"
+                            className="outline-none border border-gray-200 w-[100%] px-2 py-1"
                           />
                         </div>
                         <div>
                           <p>TRL</p>
-                          <select>
+                          <select className="w-[100%] bg-white border border-gray-200 py-1 outline-none">
+                            <option>Select TRL</option>
                             <option>TRL 1</option>
-                            <option>TRL 1</option>
-                            <option>TRL 1</option>
-                            <option>TRL 1</option>
+                            <option>TRL 2</option>
+                            <option>TRL 3</option>
+                            <option>TRL 4</option>
                           </select>
                         </div>
                       </div>
@@ -88,7 +105,7 @@ const EditPage = () => {
                           <p>Business Model</p>
                           <input
                             type="text"
-                            className="outline-none border border-gray-200 w-[100%] px-2"
+                            className="outline-none border border-gray-200 w-[100%] px-2 py-1"
                           />
                         </div>
                       </div>
@@ -96,7 +113,7 @@ const EditPage = () => {
 
                     <div className="flex justify-end gap-3 py-3">
                       <button>Cancel</button>
-                      <button className="bg-primary text-white px-2 rounded-md py-1">
+                      <button className="bg-primary text-white min-w-[60px] rounded-md py-1 flex justify-center" onClick={onSaveClick}>
                         Save
                       </button>
                     </div>
@@ -110,7 +127,8 @@ const EditPage = () => {
                   <div className="flex gap-5 items-center">
                     <div className="w-[50px]">
                       <img
-                        src="src/assets/images/profilePic.png"
+                        className="rounded-full"
+                        src={_product?.user?.profilePicture}
                         alt="/"
                       />
                     </div>
