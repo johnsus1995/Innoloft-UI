@@ -8,24 +8,29 @@ import IFrame from "src/components/IFrame";
 import OfferDetails from "src/components/OfferDetails";
 import { useNavigate } from "react-router-dom";
 import WysiwygEditor from "src/components/utils/WysiwygEditor";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import * as productActions from "src/store/product/actions"
+import * as productActions from "src/store/product/actions";
+import { productDetails } from "src/store/product/selectors";
 
 const EditPage = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const _product = useSelector(productDetails);
 
+  console.log(_product);
 
-  const fetchProduct = async() => {
-    const res = await dispatch(productActions.get())
-  }
-  
-  
+  const fetchProduct = async () => {
+    const res = await dispatch(productActions.get());
+  };
+
+  const onViewOfferClick = () => {
+    // navigate("/")
+  };
+
   useEffect(() => {
-    fetchProduct()
-  },[])
-
+    fetchProduct();
+  }, []);
 
   return (
     <div className="EditPage">
@@ -39,7 +44,7 @@ const EditPage = () => {
               <p>Offer Title</p>
               <button
                 className="bg-primary px-3 py-1.5 text-white rounded-md"
-                onClick={() => navigate("/")}
+                onClick={onViewOfferClick}
               >
                 View Offer
               </button>
@@ -51,10 +56,50 @@ const EditPage = () => {
                   alt="/"
                 ></img>
                 <div className="p-3">
-                  <input type="text" className="border border-gray-200 w-[100%] py-1.5 px-2 rounded-md outline-none" />
+                  <input
+                    type="text"
+                    className="border border-gray-200 w-[100%] py-1.5 px-2 rounded-md outline-none"
+                  />
 
                   <div className="pt-3">
-                    <WysiwygEditor/>
+                    <WysiwygEditor />
+
+                    <div className="border border-gray-200 p-3 my-3 md:grid grid-cols-2 gap-3">
+                      <div className="">
+                        <div>
+                          <p>Category</p>
+                          <input
+                            type="text"
+                            className="outline-none border border-gray-200 w-[100%] px-2"
+                          />
+                        </div>
+                        <div>
+                          <p>TRL</p>
+                          <select>
+                            <option>TRL 1</option>
+                            <option>TRL 1</option>
+                            <option>TRL 1</option>
+                            <option>TRL 1</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="">
+                        <div>
+                          <p>Business Model</p>
+                          <input
+                            type="text"
+                            className="outline-none border border-gray-200 w-[100%] px-2"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex justify-end gap-3 py-3">
+                      <button>Cancel</button>
+                      <button className="bg-primary text-white px-2 rounded-md py-1">
+                        Save
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -82,6 +127,10 @@ const EditPage = () => {
                   <Map />
                 </div>
               </div>
+            </div>
+
+            <div className="mt-3 p-3 bg-[#FFFFFF] border border-r-gray-200 mb-4">
+              <p className="py-2">Video</p>
             </div>
 
             <div className="mt-3 p-3 bg-[#FFFFFF] border border-r-gray-200 mb-4">

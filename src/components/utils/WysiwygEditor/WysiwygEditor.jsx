@@ -35,10 +35,7 @@ const WysiwygEditor = (props) => {
             statusbar:false
         }}
       />
-      <div className="flex justify-end gap-3 py-3">
-        <button>Cancel</button>
-        <button className="bg-primary text-white px-2 rounded-md py-1">Save</button>
-      </div>
+      
     </div>
   );
 };
