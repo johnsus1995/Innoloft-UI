@@ -8,25 +8,13 @@ import Map from "src/components/utils/Map";
 import IFrame from "src/components/IFrame";
 import OfferDetails from "src/components/OfferDetails";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { productDetails } from "src/store/product/selectors";
-import { useEffect } from "react";
-import * as productActions from "src/store/product/actions"
-
 
 const Home = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+
   const _product = useSelector(productDetails);
-
-  const fetchProduct = async () => {
-     await dispatch(productActions.get());
-  };
-
-  useEffect(() => {
-    fetchProduct();
-  }, []);
-
 
   return (
     <div className="Home">
