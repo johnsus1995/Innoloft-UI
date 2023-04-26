@@ -16,14 +16,14 @@ const Home = () => {
 
   const _product = useSelector(productDetails);
 
-  console.log(_product)
+  console.log(_product);
 
   return (
     <div className="Home">
       <div className="px-4 xl:px-[200px]">
         <div className="flex flex-col sm:grid sm:grid-cols-4 gap-3">
           <div className="col-span-1 hidden sm:flex">
-            <Sidebar product={_product}/>
+            <Sidebar product={_product} />
           </div>
           <div className="col-span-3 pt-3">
             <div className="block sm:flex justify-between items-center pb-3">
@@ -61,14 +61,17 @@ const Home = () => {
                   </li>
                 </ol>
               </nav>
-              <button className="bg-primary px-3 py-1.5 text-white rounded-md" onClick={()=>navigate("/product/edit")}>
+              <button
+                className="bg-primary px-3 py-1.5 text-white rounded-md"
+                onClick={() => navigate("/product/edit")}
+              >
                 Edit
               </button>
             </div>
             <div className="flex flex-col md:grid grid-cols-3 bg-white border border-gray-200 rounded-lg">
               <div className="col-span-2 border border-r-1 border-gray-200 relative rounded-bl-lg">
                 <div className="absolute w-[112px] h-[40px] bg-white rounded-tl-md rounded-br-md flex items-center ">
-                  <PatentIcon/>
+                  <PatentIcon />
                   <p className="ml-3">Patent</p>
                 </div>
                 <img
@@ -101,7 +104,7 @@ const Home = () => {
                   <div className="flex gap-5 items-center">
                     <div className="w-[50px]">
                       <img
-                        src="src/assets/images/profilePic.png"
+                        src={_product?.user?.profilePicture}
                         alt="/"
                       />
                     </div>
