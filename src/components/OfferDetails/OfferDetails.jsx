@@ -37,7 +37,7 @@ const OfferDetails = (props) => {
           <div>
             <p className="mb-1">Business model</p>
             <ul className="flex gap-2 flex-col ">
-              {_product?.businessModels.map((model) => (
+              {_product?.businessModels?.map((model) => (
                 <li className="bg-gray-200 px-2 py-0 rounded-full w-fit">
                   {model?.name}
                 </li>
