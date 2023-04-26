@@ -83,7 +83,7 @@ const EditPage = () => {
               </button>
             </div>
             <div className="flex flex-col md:grid grid-cols-3 bg-white border border-gray-200 rounded-lg">
-              <div className="col-span-2 border border-r-1 border-gray-200 relative rounded-tl-lg">
+              <div className="col-span-2 border border-r-1 border-gray-200 relative rounded-tl-lg rounded-bl-lg ">
                 <div className="absolute right-0 bg-white">
                   <EditIcon />
                 </div>
@@ -104,7 +104,7 @@ const EditPage = () => {
                   <div className="pt-3 rounded-bl-lg">
                     <WysiwygEditor setDescription={setDescription} />
 
-                    <div className="border border-gray-200 p-3 my-3 md:grid grid-cols-2 gap-3 rounded-tl-lg">
+                    <div className="border border-gray-200 p-3 my-3 md:grid grid-cols-2 gap-3">
                       <div className="rounded-bl-lg">
                         <div className="pb-3">
                           <p>Category</p>

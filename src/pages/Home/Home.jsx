@@ -83,7 +83,7 @@ const Home = () => {
                 </div>
                 <img
                   className="rounded-tl-md"
-                  src="src/assets/images/heroImage.png"
+                  src={_product.picture}
                   alt="/"
                 />
                 <div className="p-3 ">

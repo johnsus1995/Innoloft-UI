@@ -4,6 +4,7 @@ import Home from "src/pages/Home";
 import EditPage from "src/pages/EditPage";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Landing from "./pages/Landing";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
           <Route element={<MainLayout />}>
             <Route
               path="/"
-              element={<h1>Home</h1>}
+              element={<Landing/>}
             />
             <Route
               path="/product"
