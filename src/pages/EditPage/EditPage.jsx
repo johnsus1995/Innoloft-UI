@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import Sidebar from "src/components/Sidebar";
 import { CiLocationOn } from "react-icons/ci";
 import { ReactComponent as Logo } from "src/assets/icons/logo.svg";
+import { ReactComponent as EditIcon } from "src/assets/icons/Edit.svg";
 import Map from "src/components/utils/Map";
 import OfferDetails from "src/components/OfferDetails";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +10,7 @@ import WysiwygEditor from "src/components/utils/WysiwygEditor";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import * as productActions from "src/store/product/actions";
-import { productDetails,productLoader } from "src/store/product/selectors";
+import { productDetails, productLoader } from "src/store/product/selectors";
 import { RotatingLines } from "react-loader-spinner";
 import { toast } from "react-toastify";
 
@@ -61,7 +62,7 @@ const EditPage = () => {
   };
 
   const onViewOfferClick = () => {
-    // navigate("/")
+    navigate("/");
   };
 
   return (
@@ -81,13 +82,17 @@ const EditPage = () => {
                 View Offer
               </button>
             </div>
-            <div className="flex flex-col md:grid grid-cols-3 bg-white border border-gray-200">
-              <div className="col-span-2 border border-r-1 border-gray-200">
+            <div className="flex flex-col md:grid grid-cols-3 bg-white border border-gray-200 rounded-lg">
+              <div className="col-span-2 border border-r-1 border-gray-200 relative rounded-tl-lg">
+                <div className="absolute right-0 bg-white">
+                  <EditIcon />
+                </div>
                 <img
+                  className="rounded-tl-lg"
                   src={_product.picture}
                   alt="/"
-                ></img>
-                <div className="p-3">
+                />
+                <div className="p-3 rounded-bl-lg">
                   <input
                     type="text"
                     value={formData.heading}
@@ -96,11 +101,11 @@ const EditPage = () => {
                     className="border border-gray-200 w-[100%] py-1.5 px-2 rounded-md outline-none"
                   />
 
-                  <div className="pt-3">
+                  <div className="pt-3 rounded-bl-lg">
                     <WysiwygEditor setDescription={setDescription} />
 
-                    <div className="border border-gray-200 p-3 my-3 md:grid grid-cols-2 gap-3">
-                      <div className="">
+                    <div className="border border-gray-200 p-3 my-3 md:grid grid-cols-2 gap-3 rounded-tl-lg">
+                      <div className="rounded-bl-lg">
                         <div className="pb-3">
                           <p>Category</p>
                           <input
@@ -142,12 +147,14 @@ const EditPage = () => {
                     </div>
 
                     <div className="flex justify-end gap-3 py-3">
-                      <button onClick={()=>navigate("/product")}>Cancel</button>
+                      <button onClick={() => navigate("/product")}>
+                        Cancel
+                      </button>
                       <button
                         className="bg-primary text-white min-w-[60px] rounded-md py-1 flex justify-center"
                         onClick={onSaveClick}
                       >
-                        {_loading?<Spinner/>:"Save"}
+                        {_loading ? <Spinner /> : "Save"}
                       </button>
                     </div>
                   </div>
@@ -180,7 +187,7 @@ const EditPage = () => {
               </div>
             </div>
 
-            <div className="mt-4 px-5 py-5 bg-[#FFFFFF] border border-r-gray-200 mb-4">
+            <div className="mt-4 px-5 py-5 bg-[#FFFFFF] border border-r-gray-200 mb-4 rounded-lg">
               <p className="pb-2">Video</p>
               <input
                 type="text"
@@ -192,7 +199,7 @@ const EditPage = () => {
               />
             </div>
 
-            <div className="mt-3 p-3 bg-[#FFFFFF] border border-r-gray-200 mb-4">
+            <div className="mt-3 p-3 bg-[#FFFFFF] border border-r-gray-200 mb-4 rounded-lg">
               <p className="py-2">Offer details</p>
               <OfferDetails />
             </div>

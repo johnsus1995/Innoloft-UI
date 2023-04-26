@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import { ReactComponent as Logo } from "src/assets/icons/logo.svg";
-import { AiOutlineMessage } from "react-icons/ai";
+import { AiOutlineMessage,AiOutlineSearch } from "react-icons/ai";
+import { VscSearch } from "react-icons/vsc";
+
 import { SlBell } from "react-icons/sl";
 import { BsChevronDown } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
@@ -19,10 +21,11 @@ const Navbar = (props) => {
           <Logo className="w-[150px]"/>
         </div>
 
-      <div className="col-span-3 flex justify-between items-center">
-        <div className="border">
+      <div className="col-span-3 flex justify-between items-center ">
+        <div className="border relative">
+          <VscSearch className="absolute right-0 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer mr-2"/>
           <input
-            className="hidden md:flex md:w-[300px] lg:w-[400px] xl:w-[500px]  h-[27px] p-2 rounded-md "
+            className="hidden md:flex md:w-[300px] lg:w-[400px] xl:w-[500px]  h-[27px] p-2 rounded-md outline-none"
             placeholder="Enter interests, keyword, company name, etc."
             type="text"
           />

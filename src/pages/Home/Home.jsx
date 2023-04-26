@@ -3,6 +3,7 @@ import Sidebar from "src/components/Sidebar";
 import { AiOutlineRight, AiOutlineHome } from "react-icons/ai";
 import { CiLocationOn } from "react-icons/ci";
 import { ReactComponent as Logo } from "src/assets/icons/logo.svg";
+import { ReactComponent as PatentIcon } from "src/assets/icons/inno_patent.svg";
 import Map from "src/components/utils/Map";
 import IFrame from "src/components/IFrame";
 import OfferDetails from "src/components/OfferDetails";
@@ -74,14 +75,19 @@ const Home = () => {
                 Edit
               </button>
             </div>
-            <div className="flex flex-col md:grid grid-cols-3 bg-white border border-gray-200">
-              <div className="col-span-2 border border-r-1 border-gray-200">
+            <div className="flex flex-col md:grid grid-cols-3 bg-white border border-gray-200 rounded-lg">
+              <div className="col-span-2 border border-r-1 border-gray-200 relative rounded-bl-lg">
+                <div className="absolute w-[112px] h-[40px] bg-white rounded-tl-md rounded-br-md flex items-center ">
+                  <PatentIcon/>
+                  <p className="ml-3">Patent</p>
+                </div>
                 <img
+                  className="rounded-tl-md"
                   src="src/assets/images/heroImage.png"
                   alt="/"
-                ></img>
-                <div className="p-3">
-                  <p className="font-bold">
+                />
+                <div className="p-3 ">
+                  <p className="font-bold text-lg">
                     Intelligent Finite Elements in Structural mechanics
                   </p>
                   <p>
@@ -110,8 +116,8 @@ const Home = () => {
                       />
                     </div>
                     <div className="flex flex-col">
-                      <p className="font-bold text-lg">Jaison John</p>
-                      <p className="text-sm">Innoloft Gmbh</p>
+                      <p className="font-bold text-md text-gray-600">{`${_product?.user?.firstName} ${_product?.user?.lastName}`}</p>
+                      <p className="text-sm text-gray-600">Innoloft Gmbh</p>
                     </div>
                   </div>
 
@@ -123,7 +129,8 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-3 p-4 bg-[#FFFFFF] border border-r-gray-200">
+
+            <div className="mt-3 p-4 bg-[#FFFFFF] border border-r-gray-200 rounded-lg">
               <p>Video</p>
               <div className="px-[50px] py-3">
                 <IFrame
@@ -133,7 +140,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="mt-3 p-3 bg-[#FFFFFF] border border-r-gray-200 mb-4">
+            <div className="mt-3 p-3 bg-[#FFFFFF] border border-r-gray-200 mb-4 rounded-lg">
               <p className="py-2">Offer details</p>
               <OfferDetails />
             </div>

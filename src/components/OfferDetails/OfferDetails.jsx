@@ -5,7 +5,7 @@ import {
   AiOutlineCreditCard,
   AiOutlineDollar,
 } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { productDetails } from "src/store/product/selectors";
 
 const OfferDetails = (props) => {
@@ -64,7 +64,7 @@ const OfferDetails = (props) => {
             <p className="mb-1">Costs</p>
             <div className="flex gap-2">
               <span className="bg-gray-200 px-2 py-0 rounded-full">
-                Label 1
+                {_product?.investmentEffort}
               </span>
             </div>
           </div>

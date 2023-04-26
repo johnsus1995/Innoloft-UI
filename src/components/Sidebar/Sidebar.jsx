@@ -30,25 +30,25 @@ const Sidebar = (props) => {
       <div className="py-4">
         <ul>
           <li className="py-2 flex items-center">
-            <span>
+            <span className="cursor-pointer">
               <AiOutlineHome />
             </span>
-            <span className="ml-3">Home</span>
+            <span className="ml-3 cursor-pointer">Home</span>
           </li>
           <li className="py-2 flex items-center">
-            <span>
+            <span className="cursor-pointer">
               <AiOutlineUsergroupAdd />
             </span>
-            <span className="ml-3">Members</span>
+            <span className="ml-3 cursor-pointer">Members</span>
           </li>
           <li className="py-2 flex items-center justify-between">
             <a href="#" className="flex">
-              <span >
+              <span  className="cursor-pointer">
                 <AiOutlineBranches />
               </span>
-              <span className="ml-3">Organizations</span>
+              <span className="ml-3 cursor-pointer">Organizations</span>
             </a>
-            <div>
+            <div className="cursor-pointer">
               <AiOutlineDown />
             </div>
           </li>
