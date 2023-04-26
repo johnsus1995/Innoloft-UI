@@ -5,7 +5,7 @@ import {
   AiOutlineBranches,
   AiOutlineDown,
 } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { productDetails } from "src/store/product/selectors";
 
 

@@ -8,7 +8,7 @@ import OfferDetails from "src/components/OfferDetails";
 import { useNavigate } from "react-router-dom";
 import WysiwygEditor from "src/components/utils/WysiwygEditor";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import * as productActions from "src/store/product/actions";
 import { productDetails, productLoader } from "src/store/product/selectors";
 import { RotatingLines } from "react-loader-spinner";

@@ -2,11 +2,10 @@ import PropTypes from "prop-types";
 import { ReactComponent as Logo } from "src/assets/icons/logo.svg";
 import { AiOutlineMessage,AiOutlineSearch } from "react-icons/ai";
 import { VscSearch } from "react-icons/vsc";
-
 import { SlBell } from "react-icons/sl";
 import { BsChevronDown } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { productDetails } from "src/store/product/selectors";
 
 
