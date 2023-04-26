@@ -16,8 +16,6 @@ const Home = () => {
 
   const _product = useSelector(productDetails);
 
-  console.log(_product);
-
   return (
     <div className="Home">
       <div className="px-4 xl:px-[200px]">
