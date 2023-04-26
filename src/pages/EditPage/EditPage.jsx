@@ -182,7 +182,9 @@ const EditPage = () => {
                     <CiLocationOn className="w-[30px] mt-1" />
                     Jülicher Straße 72a, 52070 Aachen, Germany
                   </div>
-                  <Map />
+                  <div className="py-3">
+                   <Map />
+                  </div>
                 </div>
               </div>
             </div>

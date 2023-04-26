@@ -52,7 +52,7 @@ const OfferDetails = (props) => {
             <p className="mb-1">TRL</p>
             <div className="flex gap-2">
               <span className="bg-gray-200 px-2 py-0 rounded-full">
-                TRL 9 – Actual sys...
+                TRL 9 – Actual...
               </span>
             </div>
           </div>
