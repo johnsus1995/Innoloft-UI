@@ -9,7 +9,7 @@ import WysiwygEditor from "src/components/utils/WysiwygEditor";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import * as productActions from "src/store/product/actions";
-import { productDetails } from "src/store/product/selectors";
+import { productDetails,productLoader } from "src/store/product/selectors";
 import { RotatingLines } from "react-loader-spinner";
 import { toast } from "react-toastify";
 
@@ -29,6 +29,7 @@ const EditPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const _product = useSelector(productDetails);
+  const _loading = useSelector(productLoader);
 
   const [formData, setFormData] = useState({
     heading: "Intelligent Finite Elements in Structural mechanics",
@@ -71,7 +72,7 @@ const EditPage = () => {
             <Sidebar />
           </div>
           <div className="col-span-3 pt-3">
-            <div className="block sm:flex justify-between items-center pb-3 ">
+            <div className="flex  justify-between items-center pb-3 ">
               <p>Offer Title</p>
               <button
                 className="bg-primary px-3 py-1.5 text-white rounded-md"
@@ -126,7 +127,7 @@ const EditPage = () => {
                           </select>
                         </div>
                       </div>
-                      <div className="">
+                      <div className="py-3 md:py-0">
                         <div>
                           <p>Business Model</p>
                           <input
@@ -146,7 +147,7 @@ const EditPage = () => {
                         className="bg-primary text-white min-w-[60px] rounded-md py-1 flex justify-center"
                         onClick={onSaveClick}
                       >
-                        Save
+                        {_loading?<Spinner/>:"Save"}
                       </button>
                     </div>
                   </div>
@@ -155,7 +156,7 @@ const EditPage = () => {
               <div className=" px-3 pt-5">
                 <div className="flex flex-col gap-4">
                   <p>Offered By</p>
-                  <Logo className="w-[100%]" />
+                  <Logo className="w-[75%]" />
                   <div className="flex gap-5 items-center">
                     <div className="w-[50px]">
                       <img
@@ -165,8 +166,8 @@ const EditPage = () => {
                       />
                     </div>
                     <div className="flex flex-col">
-                      <p className="font-bold text-lg">Jaison John</p>
-                      <p className="text-sm">Innoloft Gmbh</p>
+                      <p className="font-bold text-md text-gray-600">{`${_product?.user?.firstName} ${_product?.user?.lastName}`}</p>
+                      <p className="text-sm text-gray-600">Innoloft Gmbh</p>
                     </div>
                   </div>
 

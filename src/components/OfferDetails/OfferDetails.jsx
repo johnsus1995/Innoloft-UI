@@ -18,7 +18,7 @@ const OfferDetails = (props) => {
           <AiOutlineSetting className="mt-1" />
           <div>
             <p className="mb-1">Technology</p>
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-col md:flex-row">
               <span className="bg-gray-200 px-2 py-0 rounded-full">
                 Label 1
               </span>
@@ -52,7 +52,7 @@ const OfferDetails = (props) => {
             <p className="mb-1">TRL</p>
             <div className="flex gap-2">
               <span className="bg-gray-200 px-2 py-0 rounded-full">
-                TRL 9 – Actual system proven...
+                TRL 9 – Actual sys...
               </span>
             </div>
           </div>
