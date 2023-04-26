@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import * as productActions from "src/store/product/actions";
 import { productDetails } from "src/store/product/selectors";
 import { RotatingLines } from "react-loader-spinner";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 const Spinner = () => {
   return (
@@ -31,30 +31,32 @@ const EditPage = () => {
   const _product = useSelector(productDetails);
 
   const [formData, setFormData] = useState({
-    heading:"Intelligent Finite Elements in Structural mechanics",
-    description:"",
-    category:"",
-    businessModel:"",
-    trl:""
+    heading: "Intelligent Finite Elements in Structural mechanics",
+    description: "",
+    category: "",
+    businessModel: "",
+    trl: "",
+    videoLink: "",
   });
 
-  const [description,setDescription] = useState("")
+  const [description, setDescription] = useState("");
 
   const onInputChange = (e) => {
-    const {name,value} = e.target
-    setFormData({...formData,[name]:value})
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   const onSaveClick = async () => {
     const reqData = {
-      ...formData,description
-    }
+      ...formData,
+      description,
+    };
 
-     const res = await dispatch(productActions.update(reqData))
-     if(res){
-      toast("Product updated Successfully")
-      navigate("/product")
-     }
+    const res = await dispatch(productActions.update(reqData));
+    if (res) {
+      toast("Product updated Successfully");
+      navigate("/product");
+    }
   };
 
   const onViewOfferClick = () => {
@@ -128,8 +130,8 @@ const EditPage = () => {
                         <div>
                           <p>Business Model</p>
                           <input
-                            name="businessModel"
                             type="text"
+                            name="businessModel"
                             value={formData.businessModel}
                             onChange={onInputChange}
                             className="outline-none border border-gray-200 w-[100%] px-2 py-1"
@@ -139,7 +141,7 @@ const EditPage = () => {
                     </div>
 
                     <div className="flex justify-end gap-3 py-3">
-                      <button>Cancel</button>
+                      <button onClick={()=>navigate("/product")}>Cancel</button>
                       <button
                         className="bg-primary text-white min-w-[60px] rounded-md py-1 flex justify-center"
                         onClick={onSaveClick}
@@ -177,8 +179,16 @@ const EditPage = () => {
               </div>
             </div>
 
-            <div className="mt-3 p-3 bg-[#FFFFFF] border border-r-gray-200 mb-4">
-              <p className="py-2">Video</p>
+            <div className="mt-4 px-5 py-5 bg-[#FFFFFF] border border-r-gray-200 mb-4">
+              <p className="pb-2">Video</p>
+              <input
+                type="text"
+                name="videoLink"
+                value={formData.videoLink}
+                onChange={onInputChange}
+                placeholder="Add a youtube or vimeo link"
+                className="border border-gray-200 w-[100%] px-2 py-1 outline-none"
+              />
             </div>
 
             <div className="mt-3 p-3 bg-[#FFFFFF] border border-r-gray-200 mb-4">

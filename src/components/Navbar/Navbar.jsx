@@ -14,13 +14,15 @@ const Navbar = (props) => {
 
   return (
     <div className="Navbar">
-      <div className="px-4 lg:px-[200px] flex justify-between items-center bg-secondary_violet h-[55px] mx-auto">
-        <div className="min-w-[140px] min-h-[26.29px] ml-0 cursor-pointer" onClick={()=>navigate('/product')}>
-          <Logo/>
+      <div className="px-4 xl:px-[200px] grid grid-cols-4 bg-secondary_violet h-[55px] ">
+        <div className="min-w-[140px] min-h-[26.29px] ml-0 cursor-pointer flex" onClick={()=>navigate('/product')}>
+          <Logo className="w-[150px]"/>
         </div>
+
+      <div className="col-span-3 flex justify-between items-center">
         <div className="border">
           <input
-            className="hidden md:flex md:w-[300px] lg:w-[350px] xl:w-[500px]  h-[27px] p-2 rounded-md "
+            className="hidden md:flex md:w-[300px] lg:w-[400px] xl:w-[500px]  h-[27px] p-2 rounded-md "
             placeholder="Enter interests, keyword, company name, etc."
             type="text"
           />
@@ -49,6 +51,9 @@ const Navbar = (props) => {
             </li>
           </ul>
         </div>
+      </div>
+
+
       </div>
     </div>
   );
