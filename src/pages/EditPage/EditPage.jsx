@@ -94,7 +94,7 @@ const EditPage = () => {
                   <EditIcon />
                 </div>
                 <img
-                  className="rounded-tl-md rounded-tr-md md:rounded-tr-none"
+                  className="rounded-tl-md rounded-tr-md md:rounded-tr-none p-3"
                   src={_product?.picture}
                   alt="/"
                 />

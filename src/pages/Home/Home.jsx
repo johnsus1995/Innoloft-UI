@@ -77,7 +77,7 @@ const Home = () => {
                   <p className="ml-3">Patent</p>
                 </div>
                 <img
-                  className="rounded-tl-md md:rounded-none sm:rounded-tr-md"
+                  className="rounded-tl-md md:rounded-none sm:rounded-tr-md p-3"
                   src={_product?.picture}
                   alt="/"
                 />
