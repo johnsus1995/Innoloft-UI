@@ -106,6 +106,7 @@ const Home = () => {
                   <div className="flex gap-5 items-center">
                     <div className="w-[50px]">
                       <img
+                        className="rounded-full"
                         src={_product?.user?.profilePicture}
                         alt="/"
                       />
