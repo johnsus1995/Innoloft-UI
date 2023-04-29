@@ -25,7 +25,7 @@ const Home = () => {
           </div>
           <div className="col-span-3 pt-3">
             <div className="block sm:flex justify-between items-center pb-3">
-              <nav className="">
+              <nav>
                 <ol className="list-reset flex text-gray-500">
                   <li>
                     <a
@@ -50,12 +50,16 @@ const Home = () => {
                     <AiOutlineRight className="mt-[3px]" />{" "}
                   </li>
                   <li>
-                    <a
-                      href="#"
-                      className="hover:text-blue-600"
-                    >
-                      Intelligent Finite Elements in Structural mechanics
-                    </a>
+                    <div className="inline-block w-[150px] md:w-auto">
+                      <a
+                        href="#"
+                        className="hover:text-blue-600 "
+                      >
+                        <span className="truncate block">
+                          Intelligent Finite Elements in Structural mechanics
+                        </span>
+                      </a>
+                    </div>
                   </li>
                 </ol>
               </nav>
@@ -67,17 +71,17 @@ const Home = () => {
               </button>
             </div>
             <div className="flex flex-col md:grid grid-cols-3 bg-white border border-gray-200 rounded-lg">
-              <div className="col-span-2 border border-r-1 border-gray-200 relative rounded-bl-lg">
-                <div className="absolute w-[112px] h-[40px] bg-white rounded-tl-md rounded-br-md flex items-center ">
+              <div className="col-span-2  md:border md:border-l-0 md:border-r-1 md:border-t-0 md:border-b-0  relative md:rounded-none rounded-tr-md md:rounded-bl-md rounded-tl-md">
+                <div className="absolute w-[112px] h-[40px] bg-white rounded-tl-md rounded-br-md flex items-center">
                   <PatentIcon />
                   <p className="ml-3">Patent</p>
                 </div>
                 <img
-                  className="rounded-tl-md"
-                  src={_product.picture}
+                  className="rounded-tl-md md:rounded-none sm:rounded-tr-md"
+                  src={_product?.picture}
                   alt="/"
                 />
-                <div className="p-3 ">
+                <div className="p-3">
                   <p className="font-bold text-lg">
                     Intelligent Finite Elements in Structural mechanics
                   </p>
@@ -118,7 +122,7 @@ const Home = () => {
                   </div>
 
                   <div className="py-3">
-                   <Map />
+                    <Map />
                   </div>
                 </div>
               </div>

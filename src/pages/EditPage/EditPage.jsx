@@ -13,6 +13,7 @@ import * as productActions from "src/store/product/actions";
 import { productDetails, productLoader } from "src/store/product/selectors";
 import { RotatingLines } from "react-loader-spinner";
 import { toast } from "react-toastify";
+import { ReactComponent as PatentIcon } from "src/assets/icons/inno_patent.svg";
 
 const Spinner = () => {
   return (
@@ -83,13 +84,18 @@ const EditPage = () => {
               </button>
             </div>
             <div className="flex flex-col md:grid grid-cols-3 bg-white border border-gray-200 rounded-lg">
-              <div className="col-span-2 border border-r-1 border-gray-200 relative rounded-tl-lg rounded-bl-lg ">
-                <div className="absolute right-0 bg-white">
+              <div className="col-span-2 md:border md:border-l-0 md:border-r-1 md:border-t-0 md:border-b-0 relative rounded-tl-md rounded-bl-md rounded-tr-md md:rounded-tr-none ">
+              <div className="absolute w-[112px] h-[40px] bg-white rounded-tl-md rounded-br-md flex items-center ">
+                  <PatentIcon />
+                  <p className="ml-3">Patent</p>
+                </div>
+                
+                <div className="absolute right-0 bg-white rounded-tr-md rounded-bl-md md:rounded-none  border-0 border-r-1 border-t-1">
                   <EditIcon />
                 </div>
                 <img
-                  className="rounded-tl-lg"
-                  src={_product.picture}
+                  className="rounded-tl-md rounded-tr-md md:rounded-tr-none"
+                  src={_product?.picture}
                   alt="/"
                 />
                 <div className="p-3 rounded-bl-lg">

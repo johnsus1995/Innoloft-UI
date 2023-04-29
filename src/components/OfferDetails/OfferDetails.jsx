@@ -20,13 +20,13 @@ const OfferDetails = (props) => {
             <p className="mb-1">Technology</p>
             <div className="flex gap-2 flex-col md:flex-row">
               <span className="bg-gray-200 px-2 py-0 rounded-full">
-                Label 1
+                Label1
               </span>
               <span className="bg-gray-200 px-2 py-0 rounded-full">
-                Label 2
+                Label2
               </span>
               <span className="bg-gray-200 px-2 py-0 rounded-full">
-                Label 3
+                Label3
               </span>
             </div>
           </div>
