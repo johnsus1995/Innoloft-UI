@@ -19,15 +19,9 @@ const OfferDetails = (props) => {
           <div>
             <p className="mb-1">Technology</p>
             <div className="flex gap-2 flex-col md:flex-row">
-              <span className="bg-gray-200 px-2 py-0 rounded-full">
-                Label1
-              </span>
-              <span className="bg-gray-200 px-2 py-0 rounded-full">
-                Label2
-              </span>
-              <span className="bg-gray-200 px-2 py-0 rounded-full">
-                Label3
-              </span>
+              <span className="bg-gray-200 px-2 py-0 rounded-full">Label1</span>
+              <span className="bg-gray-200 px-2 py-0 rounded-full">Label2</span>
+              <span className="bg-gray-200 px-2 py-0 rounded-full">Label3</span>
             </div>
           </div>
         </div>
@@ -36,10 +30,12 @@ const OfferDetails = (props) => {
           <AiOutlineCreditCard className="mt-1" />
           <div>
             <p className="mb-1">Business model</p>
-            <ul className="flex gap-2 flex-col ">
+            <ul className="flex gap-2 flex-col">
               {_product?.businessModels?.map((model) => (
-                <li className="bg-gray-200 px-2 py-0 rounded-full w-fit">
-                  {model?.name}
+                <li className="bg-gray-200 px-2  rounded-full w-fit">
+                  <div className="inline-block w-[90px]">
+                    <span className="truncate block">{model?.name}</span>
+                  </div>
                 </li>
               ))}
             </ul>
@@ -50,9 +46,9 @@ const OfferDetails = (props) => {
           <AiOutlineFieldTime className="mt-1" />
           <div>
             <p className="mb-1">TRL</p>
-            <div className="flex gap-2">
-              <span className="bg-gray-200 px-2 py-0 rounded-full">
-                TRL 9 – Actual...
+            <div className="flex gap-2  w-[100px] md:w-[200px] lg:w-[300px]">
+              <span className="bg-gray-200 px-2 py-0 rounded-full truncate">
+                {_product?.trl.name}
               </span>
             </div>
           </div>

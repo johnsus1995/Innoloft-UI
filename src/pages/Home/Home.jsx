@@ -130,7 +130,7 @@ const Home = () => {
 
             <div className="mt-3 p-4 bg-[#FFFFFF] border border-r-gray-200 rounded-lg">
               <p>Video</p>
-              <div className="px-[50px] py-3">
+              <div className="px-[80px] py-3">
                 <IFrame
                   width="715"
                   height="270"
