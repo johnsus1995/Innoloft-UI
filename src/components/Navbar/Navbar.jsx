@@ -16,8 +16,8 @@ const Navbar = (props) => {
   return (
     <div className="Navbar">
       <div className="px-4 xl:px-[200px] grid grid-cols-4 bg-secondary_violet h-[55px] ">
-        <div className="min-w-[140px] min-h-[26.29px] ml-0 cursor-pointer flex" onClick={()=>navigate('/product')}>
-          <Logo className="w-[150px]"/>
+        <div className="min-w-[140px] min-h-[26.29px] ml-0  flex" onClick={()=>navigate('/product')}>
+          <Logo className="w-[150px] cursor-pointer"/>
         </div>
 
       <div className="col-span-3 flex justify-between items-center ">
@@ -31,17 +31,17 @@ const Navbar = (props) => {
         </div>
         <div>
           <ul className=" hidden lg:flex gap-5 justify-between items-center md:flex ">
-            <li>
+            <li className="cursor-pointer">
               <AiOutlineMessage />
             </li>
-            <li className="flex gap-1 items-center ">
+            <li className="flex gap-1 items-center cursor-pointer">
               <p>EN</p>
               <BsChevronDown />
             </li>
-            <li>
+            <li className="cursor-pointer">
               <SlBell />
             </li>
-            <li className="flex gap-1 items-center ">
+            <li className="flex gap-1 items-center cursor-pointer">
               <div className="w-[40px]">
                 <img
                   className="rounded-full"
