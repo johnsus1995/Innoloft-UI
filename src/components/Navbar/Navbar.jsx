@@ -21,7 +21,7 @@ const Navbar = (props) => {
         </div>
 
       <div className="col-span-3 flex justify-between items-center ">
-        <div className="border relative">
+        <div className="border relative hidden lg:flex">
           <VscSearch className=" hidden lg:flex absolute right-0 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer mr-2"/>
           <input
             className="hidden md:flex md:w-[300px] lg:w-[400px] xl:w-[500px]  h-[27px] p-2 rounded-md outline-none"
