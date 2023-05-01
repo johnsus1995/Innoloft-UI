@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       
-      <div className=" font-sans">
+      <div className="font-nunito">
       <ToastContainer
         position="top-center"
         autoClose={3000}

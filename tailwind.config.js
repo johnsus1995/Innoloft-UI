@@ -16,6 +16,9 @@ export default {
         secondary_violet:"#e8eaf6"
       },
     },
+    fontFamily:{
+      'nunito': ['nunito', 'sans-serif'],
+    }
   },
   plugins: [],
 }
